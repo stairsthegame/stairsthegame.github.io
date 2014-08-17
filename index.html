@@ -1,0 +1,325 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        
+        <!-- make sections the correct size when documnt loads !-->
+        <script>
+            // sets panel positions based on window size
+            var set_positions = function() {
+                console.log('resized, relocated');
+                // get window size0
+                var window_h = $(window).height(); 
+                var window_w = $(window).width();
+                
+                // set size of each section
+                $(".section").css("width", window_w);
+                $(".section").css("height", window_h);
+                
+                // set position of each section
+                $("#origin").css("top", window_h);
+                $("#about").css("top", window_h*2);
+                $("#media").css("top", window_h*3);
+                $("#download").css("top", window_h*4);
+            }
+            
+            $(document).ready(function(){
+                // set position of the sections
+                set_positions();
+                
+                // code from http://www.jqueryrain.com/?4IUuCqNF
+                // hide "to top" button
+                $("#to_top").hide();
+                
+                // fade in #back-top
+	            $(function () {
+		            $(window).scroll(function () {
+			            if ($(this).scrollTop() > 100) {
+				            $('#to_top').fadeIn();
+			            } else {
+				            $('#to_top').fadeOut();
+			            }
+			            
+	                });
+	            });
+
+        		// scroll body to 0px on click
+        		$('#to_top').click(function () {
+        			$('body,html').animate({
+        				scrollTop: 0
+        			}, 800);
+        			return false;
+        		});
+	
+                // make home buttons clickable
+                $("#home_origin").click(function(){
+                    $('html,body').animate({ scrollTop: $('#origin').offset().top }, 'slow');
+                });
+                
+                $("#home_about").click(function(){
+                    $('html,body').animate({ scrollTop: $('#about').offset().top }, 'slow');
+                });
+                
+                $("#home_media").click(function(){
+                    $('html,body').animate({ scrollTop: $('#media').offset().top }, 'slow');
+                });
+                
+                $("#home_download").click(function(){
+                    $('html,body').animate({ scrollTop: $('#download').offset().top }, 'slow');
+                });
+                
+                // make headers center their section
+                $("#origin").click(function(){
+                    $('html,body').animate({ scrollTop: $('#origin').offset().top }, 'slow');
+                });
+                
+                $("#about").click(function(){
+                    $('html,body').animate({ scrollTop: $('#about').offset().top }, 'slow');
+                });
+                
+                $("#media").click(function(){
+                    $('html,body').animate({ scrollTop: $('#media').offset().top }, 'slow');
+                });
+                
+                $("#download").click(function(){
+                    $('html,body').animate({ scrollTop: $('#download').offset().top }, 'slow');
+                });
+            
+            });
+            
+            // reposition sections on window resize
+            $(window).resize(function() {
+                set_positions();
+            });
+            
+
+            
+        </script>
+        
+        <style type="text/css">
+            body {
+                width: 100%;
+                height: 100%;
+                background-color: #111;
+                color: #ccc;
+                font-family: Monospace;
+                overflow-x: hidden;
+            }
+            .section {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            .button {
+                background-color: white;
+                color: black;
+                margin: 0 auto;
+                text-align: center;
+            }
+            .header {
+                background-color: white;
+                color: black;
+                margin: 0 auto;
+                margin-top: 3em;
+                margin-bottom: 3em;
+                text-align: center; 
+                line-height: 3em;
+                width: 14em;
+                height: 3em;
+            }
+            .text {
+                padding: 0 20% 0 20%;
+            }
+            #to_top {
+                z-index: 100;
+                background-color: white;
+                color: black;
+                text-align: center;
+                position: fixed;
+                margin: 0 auto;
+                bottom: 1em;
+                font-size: 1.5em;
+                line-height: 1.5em;
+                width: 7em;
+                height: 1.5em;
+            }
+            #home_origin {
+                margin-top: 5%;
+                font-size: 2em;
+                width: 7em;
+                height: 1.2em;
+                line-height: 1.2em;
+            }
+            #home_about {
+                font-size: 4em;
+                width: 7em;
+                height: 1.2em;
+                line-height: 1.2em;
+            }
+            #home_media {
+                font-size: 6em;
+                width: 7em;
+                height: 1.2em;
+                line-height: 1.2em;
+            }
+            #home_download {
+                font-size: 8em;
+                width: 7em;
+                height: 1.2em;
+                line-height: 1.2em;
+            }
+            #origin {
+            }
+            #media {
+            }
+            a {
+                color: #FDC68A;
+            }
+        </style>
+        
+    </head>
+    <body>
+        <div id="to_top">to top</div>
+
+        <div class="section" id="home">
+            <div class="button" id="home_origin">
+                <p>origin</p>
+            </div>
+            <div class="button" id="home_about">
+                <p>about</p>
+            </div>
+            <div class="button" id="home_media">
+                <p>media</p>
+            </div>
+            <div class="button" id="home_download">
+                <p>download</p>
+            </div>
+        </div>  
+        
+        <div class="section" id="origin">
+            <div class="header"><h1>origin</h1></div>
+            <div class="text">
+                <p>
+                    Stairs was originally created by cardboard for 
+                    <a href="http://www.ludumdare.com/compo/ludum-dare-26/?action=preview&uid=16294">Ludum Dare 26</a>.
+                    cardboard came up with the idea for stairs while away from his computer, surprisingly. Without access to his computer, he painstakingly pseudocoded his
+                    idea into his phone, so that he could code it quicker when he arrived home. By quicker, I mean in less than 10 hours, at least according to his
+                    blog post on the Ludum Dare website. 
+                </p>
+                <p>
+                    The game turned out how cardboard wanted it to, and he received positive and negative feedback. People called the game "funny", "very original", 
+                    "QWOP-esque", and "about as minimalistic as it get".
+                </p>
+                <p>
+                    Here are some other things said about Stairs:
+                </p>
+                    <ul>
+                        <span style="color: #82CA9D">
+                            <li>"as infurating and addictive as Super Hexagon, if not more"
+                            </li>
+                            <li>"you have done well, cardboard"
+                            </li>
+                            <li>"so far this is probably the most addictive game I've played this [Ludum Dare]"
+                            </li>
+                            <li>"the shear amount of minimalism you achieved is staggering"
+                            </li>
+                            <li>"it's like jump rope, but with stairs!"
+                            </li>
+                            <li>"this is a very unusual game!"
+                            </li>
+                            <li>"it reminds me of master of the lamps \o/"
+                            </li>
+                            <li>"I... i've never been so proud of managing to stagger up the stairs before ;_;"
+                            </li>
+                            <li>"Whoever said QWOP was right, this manages to give the same kind of 'oh god how did I get here I am not good with feet' feeling"
+                            </li>
+                            <li>"I definitely had the QWOP _OMG HOW DO I PLAY THIS_ feeling"
+                            </li>
+                        </span>
+                        <span style="color: #F6989D">
+                            <li>"I couldn't play... I couldn't even understand how to play"
+                            </li>
+                            <li>"I now understand... why they warned me about stairs... it keeps happening"
+                            </li>
+                            <li>"I've been trying for 10 minutes and I never get more than about 20 steps up"
+                            </li>
+                            <li>"404 error on your download page. :(", "controls are pretty hard"
+                            </li>
+                            <li>"Aaaaaahh. This is hard!"
+                            </li>
+                            <li>"Waiting for stairs. Stairs on line 1. Stairs on line 1. Report to the main desk."
+                            </li>
+                            <li>"even after I understood what to do, I kind of failed at doing it"
+                            </li>
+                            <li>"The game is difficult. I had a hard time 'marching' up the stairs, and it seemed to go on forever, with no incentive."
+                            </li>
+                            <li>"it takes a while to get used to judging when you need a foot to land to prepare for the next step"
+                            </li>
+                            <li>"I just really suck at your game. :/", "Took me a LONG time to figure out what I was doing".
+                            </li>
+                        </span>
+                    </ul>
+                <p>
+                    It's quite a shame that cardboard himself didn't think much about making a post-comp version of the game, but with the help of
+                    his friend, Matt, a new and improved Stairs is finally being released. This version of Stairs boasts many improvements over its Ludum Dare relative.
+                    Read more about the new stairs game in the <em>about</em> section below. 
+                </p>
+            </div>
+        </div>
+        
+        <div class="section" id="about">
+            <div class="header"><h1>about</h1></div>
+            <div class="text">
+                <p>
+                    Stairs is a 'infinite stepper' in the vein of Cube Runner or Super Hexagon.
+                </p>
+                <p>
+                    The goal of stairs is to step up stairs as long as possible, without tripping, falling off, or skipping any steps. 
+                </p>
+                <p>
+                    A helpful hint: 
+                    To get over a step, both feet cannot be on the ground at the moment a step leaves the screen. You can only lift one foot at a time.
+                </p>
+                <p>
+                    There are two different game modes, each with four levels of difficulty. 
+                    <span style="background-color:#a74855">L</span><span style="background-color:#8a4480">e</span><span style="background-color:#6946aa">v</span><span style="background-color:#4e71aa">e</span><span style="background-color:#6d8180">l</span><span style="background-color:#9d8849">s</span> 
+                    has organized waves of stairs - zig zag, side to side, rapid fire, narrow, and random. 
+                    <b><span style="background-color:white"> <span style="color:#cf6477">C</span><span style="color:#da67b1">l</span><span style="color:#bc63db">a</span><span style="color:#a164ff">s</span><span style="color:#8098ff">s</span><span style="color:#8abddc">i</span><span style="color:#ae9c6d">c</span></span></b>
+                    is where the stairs follow no patterns and are all random, and is based off of cardboard's original Ludum Dare submission. As you climb more steps, the game gets harder. The four difficulty levels are:
+                    <ul>
+                        <li><span style="color:#FF6E7B">Easy</span> - For beginners (e.g. Keegan). A stepping stone to the more advanced difficulties.
+                        </li>
+                        <li><span style="color:#A360FF">Medium</span> - Moderately challenging. A respectable choice.
+                        </li>
+                        <li><span style="color:#6CB8FF">Hard</span> - Hard is Medium, but at its hardest (remember how the game gets harder as you climb more stairs?), which is pretty darn hard. Unlock this difficulty by getting 150 on Medium.
+                        </li>
+                        <li><span style="color:#F3CD65">Insane</span> - If you score 100 on Insane I will buy you dinner. Because I made the game and have played it a lot and getting 100 on Insane is insane. Unlock this difficulty by getting 100 on Hard.
+                        </li>
+                    </ul>
+                    <em>Note: Chances are, if you can't unlock a difficulty level, you probably won't fare too well with it.</em>
+                </p>    
+                
+                <p>
+                    The original Stairs was basically a prequel to the Classic game mode on easy difficulty. Whereas the motivation in the original Stairs was a motivational speech from a potato when one reached the top, the motivation in the new Stairs is to get higher scores than all your lame friends. 
+                </p>
+                <p>
+                    Matt and cardboard made this game. Matt programmed it and cardboard did the art and music. Special thanks to Kickstarter backers for helping us make this happen.
+                </p>
+            </div>
+            
+        </div>
+        
+        <div class="section" id="media">
+            <div class="header"><h1>media</h1></div>
+            
+        </div>
+        
+        <div class="section" id="download">
+            <div class="header"><h1>download</h1></div>
+            
+        </div>
+        
+    </body>
+</html>
