@@ -7,7 +7,6 @@
         <script>
             // sets panel positions based on window size
             var set_positions = function() {
-                console.log('resized, relocated');
                 // get window size0
                 var window_h = $(window).height();
                 var window_w = $(window).width();
@@ -19,8 +18,8 @@
                 // set position of each section
                 $("#origin").css("top", window_h);
                 $("#about").css("top", window_h*2);
-                $("#media").css("top", window_h*3);
-                $("#download").css("top", window_h*4);
+                $("#tutorial").css("top", window_h*3);
+                $("#media").css("top", window_h*4);
             }
 
             $(document).ready(function(){
@@ -60,12 +59,12 @@
                     $('html,body').animate({ scrollTop: $('#about').offset().top }, 'slow');
                 });
 
-                $("#home_media").click(function(){
-                    $('html,body').animate({ scrollTop: $('#media').offset().top }, 'slow');
+                $("#home_tutorial").click(function(){
+                    $('html,body').animate({ scrollTop: $('#tutorial').offset().top }, 'slow');
                 });
 
-                $("#home_download").click(function(){
-                    $('html,body').animate({ scrollTop: $('#download').offset().top }, 'slow');
+                $("#home_media").click(function(){
+                    $('html,body').animate({ scrollTop: $('#media').offset().top }, 'slow');
                 });
 
                 // make headers center their section
@@ -77,12 +76,12 @@
                     $('html,body').animate({ scrollTop: $('#about').offset().top }, 'slow');
                 });
 
-                $("#media").click(function(){
-                    $('html,body').animate({ scrollTop: $('#media').offset().top }, 'slow');
+                $("#tutorial").click(function(){
+                    $('html,body').animate({ scrollTop: $('#tutorial').offset().top }, 'slow');
                 });
 
-                $("#download").click(function(){
-                    $('html,body').animate({ scrollTop: $('#download').offset().top }, 'slow');
+                $("#media").click(function(){
+                    $('html,body').animate({ scrollTop: $('#media').offset().top }, 'slow');
                 });
 
             });
@@ -132,6 +131,19 @@
             .text {
                 padding: 0 20% 0 20%;
             }
+            .video {
+                text-align: right;
+                margin-right: 15%;
+            }
+            .hints {
+                list-style: none;
+            }
+            .hints li {
+                padding-bottom: 1em;
+            }
+            .hints_sub {
+                list-style: none;
+            }
             #to_top {
                 z-index: 100;
                 background-color: white;
@@ -158,29 +170,61 @@
                 height: 1.2em;
                 line-height: 1.2em;
             }
-            #home_media {
+            #home_tutorial {
                 font-size: 6em;
                 width: 7em;
                 height: 1.2em;
                 line-height: 1.2em;
             }
-            #home_download {
+            #home_media {
                 font-size: 8em;
                 width: 7em;
                 height: 1.2em;
                 line-height: 1.2em;
             }
-            #origin {
-            }
-            #media {
-            }
+
             a {
                 color: #FDC68A;
+            }
+            
+            .c_easy {
+                color: #FF6E7B;
+            }
+            .c_medium {
+                color: #A360FF;
+            }
+            .c_hard {
+                color:#6CB8FF;
+            }
+            .c_insane {
+                color: #F3CD65;
+            }
+            .li_red:before {
+                content: "\0025AC\000020";
+                color: #FF6E7B;
+            }
+            .li_purple:before {
+                content: "\0025AC\000020";
+                color: #A360FF;
+            }
+            .li_blue:before {
+                content: "\0025AC\000020";
+                color: #6CB8FF;
+            }
+            .li_yellow:before {
+                content: "\0025AC\000020";
+                color: #F3CD65  ;
+            }
+            .li_white:before {
+                content: "\0025AC\000020";
+                color: white  ;
             }
         </style>
 
     </head>
     <body>
+        <a href="http://www.stairsthegame.com/mobile.html" style="z-index:101;position:absolute;left:0;top:0;">mobile site</a> 
+    
         <div id="to_top">to top</div>
 
         <div class="section" id="home">
@@ -190,11 +234,11 @@
             <div class="button" id="home_about">
                 <p>about</p>
             </div>
+            <div class="button" id="home_tutorial">
+                <p>tutorial</p>
+            </div>
             <div class="button" id="home_media">
                 <p>media</p>
-            </div>
-            <div class="button" id="home_download">
-                <p>download</p>
             </div>
         </div>
 
@@ -293,13 +337,13 @@
                     <b><span style="background-color:white"> <span style="color:#cf6477">C</span><span style="color:#da67b1">l</span><span style="color:#bc63db">a</span><span style="color:#a164ff">s</span><span style="color:#8098ff">s</span><span style="color:#8abddc">i</span><span style="color:#ae9c6d">c</span></span></b>
                     is where the stairs follow no patterns and are all random, and is based off of cardboard's original Ludum Dare submission. As you climb more steps, the game gets harder. The four difficulty levels are:
                     <ul>
-                        <li><span style="color:#FF6E7B">Easy</span> - For beginners (e.g. Keegan). A stepping stone to the more advanced difficulties.
+                        <li><span class="c_easy">Easy</span> - For beginners (e.g. Keegan). A stepping stone to the more advanced difficulties.
                         </li>
-                        <li><span style="color:#A360FF">Medium</span> - Moderately challenging. A respectable choice.
+                        <li><span class="c_medium">Medium</span> - Moderately challenging. A respectable choice.
                         </li>
-                        <li><span style="color:#6CB8FF">Hard</span> - Hard is Medium, but at its hardest (remember how the game gets harder as you climb more stairs?), which is pretty darn hard. Unlock this difficulty by getting 150 on Medium.
+                        <li><span class="c_hard">Hard</span> - Hard is Medium, but at its hardest (remember how the game gets harder as you climb more stairs?), which is pretty darn hard. Unlock this difficulty by getting 150 on Medium.
                         </li>
-                        <li><span style="color:#F3CD65">Insane</span> - If you score 100 on Insane I will buy you dinner. Because I made the game and have played it <em>a lot</em> and getting 100 on Insane is insane. Unlock this difficulty by getting 100 on Hard.
+                        <li><span class="c_insane">Insane</span> - If you score 100 on Insane I will buy you dinner. Because I made the game and have played it <em>a lot</em> and getting 100 on Insane is insane. Unlock this difficulty by getting 100 on Hard.
                         </li>
                     </ul>
                     <em>Note: Chances are, if you can't unlock a difficulty level, you probably won't fare too well with it.</em>
@@ -315,19 +359,62 @@
 
         </div>
 
-        <div class="section" id="media">
-            <div class="header"><h1>media</h1></div>
-            <p class="text" style="text-align:center">
-                <iframe width="720" height="540" src="//www.youtube.com/embed/Qz6M3-Up1cM" frameborder="0" allowfullscreen></iframe>
-            </p>
+        <div class="section" id="tutorial">
+            <div class="header"><h1>tutorial</h1></div>
+            <div class="text" style="padding-left:0;padding-right:5em;width:45%;float:left;">
+                <p>
+                    <h3 style="padding-left: 2em">hints</h3>
+                    <ul class="hints">
+                        <li class="li_red">Stepping with a foot moves you in the opposite direction</li>
+                            <ul class="hints_sub">
+                                <li class="li_white">Stepping with your left foot moves you right (or the stairs left)</li>
+                                <li class="li_white">Stepping with your right foot moves you left (or the stairs right)</li>
+                            </ul>
+                            
+                        <li class="li_purple">Sometimes you will need to look ahead and step strategically to line yourself up for future steps</li>
+                        <li class="li_blue">Smaller steps are usually more effective than bigger steps</li>
+                            <ul class="hints_sub">
+                                <li class="li_white">This is especially true for narrow stairs</li>
+                                <li class="li_white">The main exception to this method is when you need to move horizontally</li>
+                            </ul>
+                            
+                        <li class="li_yellow">Don't die! The following are the ways to die:</li>
+                            <ul>
+                                <li class="li_white"><em>Trip</em>: This happens when the top of the closest stair leaves the screen while both of your feet are grounded</li>
+                                <li class="li_white"><em>Fall off left</em>: This happens when the top of the closest stair leaves the screen while your left foot is on the ground but off the stair</li>
+                                <li class="li_white"><em>Fall off right</em>: Same as the above, but with the right foot being the one that is off the stair</li>
+                                <li class="li_white"><em>Step off left</em>: This happens when the top of the closest stair leaves the screen and your left foot is airborne to the left of the stair</li>
+                                <li class="li_white"><em>Step off right</em>: Sane as the above, but with the right foot being airborne</li>
+                                <li class="li_white"><em>Skip a step</em>: This happens when you skip a step; take it one stair at a time!</li>
+                                <li class="li_white"><em>Important takeaway</em>: The thing that matters is the <em>TOP</em> of the steps. This is when the conditions for dieing are checked</li>
+                            </ul>
+                    </ul>
+                </p>
+            </div>
+            <div class="video" style="float:left;margin-right:0;padding-left:3em;">
+                <p>
+                    <iframe width="640" height="480" src="//www.youtube.com/embed/Qz6M3-Up1cM" frameborder="0" allowfullscreen></iframe>
+                </p>
+            </div>
 
         </div>
 
-        <div class="section" id="download">
-            <div class="header"><h1>download</h1></div>
-            <p class="text">
-                Download link coming soon..
-            </p>
+        <div class="section" id="media">
+            <div class="header"><h1>media</h1></div>
+            <div class="text">
+                <p>
+                    <ul>
+                        <li>link to android version (requires Android #.# or higher)</li>
+                        <li>link to ios version (requires IOS version #.# or higher)</li>
+                        <li>windows/linux/ios version coming soon (possibly)</li>
+                    </ul>
+                </p>
+            </div>
+            <div class="text">
+                <div style="background-color:gray;width:20em;height:30em;margin-left:3em;margin-top:5em;text-align:center;float:left">a screenshot</div>
+                <div style="background-color:gray;width:20em;height:30em;margin-left:3em;margin-top:5em;text-align:center;float:left">a screenshot</div>
+                <div style="background-color:gray;width:20em;height:30em;margin-left:3em;margin-top:5em;text-align:center;float:left">a screenshot</div>
+            </div>
         </div>
 
     </body>
