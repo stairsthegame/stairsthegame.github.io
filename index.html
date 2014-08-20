@@ -2,35 +2,35 @@
 <html>
     <head>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        
+
         <!-- make sections the correct size when documnt loads !-->
         <script>
             // sets panel positions based on window size
             var set_positions = function() {
                 console.log('resized, relocated');
                 // get window size0
-                var window_h = $(window).height(); 
+                var window_h = $(window).height();
                 var window_w = $(window).width();
-                
+
                 // set size of each section
                 $(".section").css("width", window_w);
                 $(".section").css("height", window_h);
-                
+
                 // set position of each section
                 $("#origin").css("top", window_h);
                 $("#about").css("top", window_h*2);
                 $("#media").css("top", window_h*3);
                 $("#download").css("top", window_h*4);
             }
-            
+
             $(document).ready(function(){
                 // set position of the sections
                 set_positions();
-                
+
                 // code from http://www.jqueryrain.com/?4IUuCqNF
                 // hide "to top" button
                 $("#to_top").hide();
-                
+
                 // fade in #back-top
 	            $(function () {
 		            $(window).scroll(function () {
@@ -39,7 +39,7 @@
 			            } else {
 				            $('#to_top').fadeOut();
 			            }
-			            
+
 	                });
 	            });
 
@@ -50,52 +50,52 @@
         			}, 800);
         			return false;
         		});
-	
+
                 // make home buttons clickable
                 $("#home_origin").click(function(){
                     $('html,body').animate({ scrollTop: $('#origin').offset().top }, 'slow');
                 });
-                
+
                 $("#home_about").click(function(){
                     $('html,body').animate({ scrollTop: $('#about').offset().top }, 'slow');
                 });
-                
+
                 $("#home_media").click(function(){
                     $('html,body').animate({ scrollTop: $('#media').offset().top }, 'slow');
                 });
-                
+
                 $("#home_download").click(function(){
                     $('html,body').animate({ scrollTop: $('#download').offset().top }, 'slow');
                 });
-                
+
                 // make headers center their section
                 $("#origin").click(function(){
                     $('html,body').animate({ scrollTop: $('#origin').offset().top }, 'slow');
                 });
-                
+
                 $("#about").click(function(){
                     $('html,body').animate({ scrollTop: $('#about').offset().top }, 'slow');
                 });
-                
+
                 $("#media").click(function(){
                     $('html,body').animate({ scrollTop: $('#media').offset().top }, 'slow');
                 });
-                
+
                 $("#download").click(function(){
                     $('html,body').animate({ scrollTop: $('#download').offset().top }, 'slow');
                 });
-            
+
             });
-            
+
             // reposition sections on window resize
             $(window).resize(function() {
                 set_positions();
             });
-            
 
-            
+
+
         </script>
-        
+
         <style type="text/css">
             body {
                 width: 100%;
@@ -124,7 +124,7 @@
                 margin: 0 auto;
                 margin-top: 3em;
                 margin-bottom: 3em;
-                text-align: center; 
+                text-align: center;
                 line-height: 3em;
                 width: 14em;
                 height: 3em;
@@ -178,7 +178,7 @@
                 color: #FDC68A;
             }
         </style>
-        
+
     </head>
     <body>
         <div id="to_top">to top</div>
@@ -196,20 +196,20 @@
             <div class="button" id="home_download">
                 <p>download</p>
             </div>
-        </div>  
-        
+        </div>
+
         <div class="section" id="origin">
             <div class="header"><h1>origin</h1></div>
             <div class="text">
                 <p>
-                    Stairs was originally created by cardboard for 
+                    Stairs was originally created by cardboard for
                     <a href="http://www.ludumdare.com/compo/ludum-dare-26/?action=preview&uid=16294">Ludum Dare 26</a>.
                     cardboard came up with the idea for stairs while away from his computer, surprisingly. Without access to his computer, he painstakingly pseudocoded his
                     idea into his phone, so that he could code it quicker when he arrived home. By quicker, I mean in less than 10 hours, at least according to his
-                    blog post on the Ludum Dare website. 
+                    blog post on the Ludum Dare website.
                 </p>
                 <p>
-                    The game turned out how cardboard wanted it to, and he received positive and negative feedback. People called the game "funny", "very original", 
+                    The game turned out how cardboard wanted it to, and he received positive and negative feedback. People called the game "funny", "very original",
                     "QWOP-esque", and "about as minimalistic as it get".
                 </p>
                 <p>
@@ -272,7 +272,7 @@
                 </p>
             </div>
         </div>
-        
+
         <div class="section" id="about">
             <div class="header"><h1>about</h1></div>
             <div class="text">
@@ -280,16 +280,16 @@
                     Stairs is a 'infinite stepper' in the vein of Cube Runner or Super Hexagon.
                 </p>
                 <p>
-                    The goal of stairs is to step up stairs as long as possible, without tripping, falling off, or skipping any steps. 
+                    The goal of stairs is to step up stairs as long as possible, without tripping, falling off, or skipping any steps.
                 </p>
                 <p>
-                    A helpful hint: 
+                    A helpful hint:
                     To get over a step, both feet cannot be on the ground at the moment a step leaves the screen. You can only lift one foot at a time.
                 </p>
                 <p>
-                    There are two different game modes, each with four levels of difficulty. 
-                    <span style="background-color:#a74855">L</span><span style="background-color:#8a4480">e</span><span style="background-color:#6946aa">v</span><span style="background-color:#4e71aa">e</span><span style="background-color:#6d8180">l</span><span style="background-color:#9d8849">s</span> 
-                    has organized waves of stairs - zig zag, side to side, rapid fire, narrow, and random. 
+                    There are two different game modes, each with four levels of difficulty.
+                    <span style="background-color:#a74855">L</span><span style="background-color:#8a4480">e</span><span style="background-color:#6946aa">v</span><span style="background-color:#4e71aa">e</span><span style="background-color:#6d8180">l</span><span style="background-color:#9d8849">s</span>
+                    has organized waves of stairs - zig zag, side to side, rapid fire, narrow, and random.
                     <b><span style="background-color:white"> <span style="color:#cf6477">C</span><span style="color:#da67b1">l</span><span style="color:#bc63db">a</span><span style="color:#a164ff">s</span><span style="color:#8098ff">s</span><span style="color:#8abddc">i</span><span style="color:#ae9c6d">c</span></span></b>
                     is where the stairs follow no patterns and are all random, and is based off of cardboard's original Ludum Dare submission. As you climb more steps, the game gets harder. The four difficulty levels are:
                     <ul>
@@ -299,36 +299,36 @@
                         </li>
                         <li><span style="color:#6CB8FF">Hard</span> - Hard is Medium, but at its hardest (remember how the game gets harder as you climb more stairs?), which is pretty darn hard. Unlock this difficulty by getting 150 on Medium.
                         </li>
-                        <li><span style="color:#F3CD65">Insane</span> - If you score 100 on Insane I will buy you dinner. Because I made the game and have played it a lot and getting 100 on Insane is insane. Unlock this difficulty by getting 100 on Hard.
+                        <li><span style="color:#F3CD65">Insane</span> - If you score 100 on Insane I will buy you dinner. Because I made the game and have played it <em>a lot</em> and getting 100 on Insane is insane. Unlock this difficulty by getting 100 on Hard.
                         </li>
                     </ul>
                     <em>Note: Chances are, if you can't unlock a difficulty level, you probably won't fare too well with it.</em>
-                </p>    
-                
+                </p>
+
                 <p>
-                    The original Stairs was basically a prequel to the Classic game mode on easy difficulty. Whereas the motivation in the original Stairs was a motivational speech from a potato when one reached the top, the motivation in the new Stairs is to get higher scores than all your lame friends. 
+                    The original Stairs was basically a prequel to the Classic game mode on easy difficulty. Whereas the motivation in the original Stairs was a motivational speech from a potato when one reached the top, the motivation in the new Stairs is to get higher scores than all your lame friends.
                 </p>
                 <p>
                     Matt and cardboard made this game. Matt programmed it and cardboard did the art and music. Special thanks to Kickstarter backers for helping us make this happen.
                 </p>
             </div>
-            
+
         </div>
-        
+
         <div class="section" id="media">
             <div class="header"><h1>media</h1></div>
             <p class="text" style="text-align:center">
-                <iframe width="480" height="360" src="//www.youtube.com/embed/Qz6M3-Up1cM" frameborder="0" allowfullscreen></iframe>
+                <iframe width="720" height="540" src="//www.youtube.com/embed/Qz6M3-Up1cM" frameborder="0" allowfullscreen></iframe>
             </p>
-            
+
         </div>
-        
+
         <div class="section" id="download">
             <div class="header"><h1>download</h1></div>
             <p class="text">
                 Download link coming soon..
             </p>
         </div>
-        
+
     </body>
 </html>
