@@ -1,6 +1,8 @@
 <!DOCTYPE HTML>
+<meta charset="UTF-8">
 <html>
     <head>
+        <title>Stairs The Game</title>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
         <!-- make sections the correct size when documnt loads !-->
@@ -22,6 +24,7 @@
                 $("#media").css("top", (window_h + 200)*4);
                 
                 set_video_size(window_h, window_w);
+                set_screenshot_size(window_h, window_w);
             }
             
             var set_video_size = function(height, width) {
@@ -29,7 +32,16 @@
                 video_width = width * .4;
                 video_height = video_height.toString();
                 video_width = video_width.toString();
-                $("#tutorial_video").html('<iframe width="' + video_width + '" height="' + video_height + '480" src="//www.youtube.com/embed/Qz6M3-Up1cM" frameborder="0" allowfullscreen></iframe>')
+                $("#tutorial_video").html('<iframe width="' + video_width + '" height="' + video_height + '480" src="//www.youtube.com/embed/Qz6M3-Up1cM" frameborder="0" allowfullscreen></iframe>');
+            }
+            
+            var set_screenshot_size = function(height, width) {
+                screenshot_height = height * .4;
+                screenshot_width = width * .15;
+                //screenshot_height = video_height.toString();
+                //screenshot_width = video_width.toString();
+                $(".screenshot").width(screenshot_width);
+                $(".screenshot").height(screenshot_height);
             }
 
             $(document).ready(function(){
@@ -421,9 +433,9 @@
                 </p>
             </div>
             <div class="text">
-                <div style="background-color:gray;width:20em;height:30em;margin-left:3em;margin-top:5em;text-align:center;float:left">a screenshot</div>
-                <div style="background-color:gray;width:20em;height:30em;margin-left:3em;margin-top:5em;text-align:center;float:left">a screenshot</div>
-                <div style="background-color:gray;width:20em;height:30em;margin-left:3em;margin-top:5em;text-align:center;float:left">a screenshot</div>
+                <div class="screenshot" style="background-color:gray;width:20em;height:30em;margin-left:3em;margin-top:5em;text-align:center;float:left">a screenshot</div>
+                <div class="screenshot" style="background-color:gray;width:20em;height:30em;margin-left:3em;margin-top:5em;text-align:center;float:left">a screenshot</div>
+                <div class="screenshot" style="background-color:gray;width:20em;height:30em;margin-left:3em;margin-top:5em;text-align:center;float:left">a screenshot</div>
             </div>
         </div>
 
