@@ -16,10 +16,20 @@
                 $(".section").css("height", window_h);
 
                 // set position of each section
-                $("#origin").css("top", window_h);
-                $("#about").css("top", window_h*2);
-                $("#tutorial").css("top", window_h*3);
-                $("#media").css("top", window_h*4);
+                $("#origin").css("top", window_h + 200);
+                $("#about").css("top", (window_h + 200)*2);
+                $("#tutorial").css("top", (window_h + 200)*3);
+                $("#media").css("top", (window_h + 200)*4);
+                
+                set_video_size(window_h, window_w);
+            }
+            
+            var set_video_size = function(height, width) {
+                video_height = height * .7;
+                video_width = width * .4;
+                video_height = video_height.toString();
+                video_width = video_width.toString();
+                $("#tutorial_video").html('<iframe width="' + video_width + '" height="' + video_height + '480" src="//www.youtube.com/embed/Qz6M3-Up1cM" frameborder="0" allowfullscreen></iframe>')
             }
 
             $(document).ready(function(){
@@ -223,7 +233,7 @@
 
     </head>
     <body>
-        <a href="http://www.stairsthegame.com/mobile.html" style="z-index:101;position:absolute;left:0;top:0;">mobile site</a> 
+        <a href="http://cardboard.kd.io/stairs_m.html" style="z-index:101;position:absolute;left:0;top:0;">mobile site</a> 
     
         <div id="to_top">to top</div>
 
@@ -392,8 +402,8 @@
                 </p>
             </div>
             <div class="video" style="float:left;margin-right:0;padding-left:3em;">
-                <p>
-                    <iframe width="480" height="360" src="//www.youtube.com/embed/Qz6M3-Up1cM" frameborder="0" allowfullscreen></iframe>
+                <p id="tutorial_video">
+                    <iframe width="640" height="480" src="//www.youtube.com/embed/Qz6M3-Up1cM" frameborder="0" allowfullscreen></iframe>
                 </p>
             </div>
 
