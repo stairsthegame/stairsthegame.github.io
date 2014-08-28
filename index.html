@@ -16,7 +16,7 @@
 
                 // set size of each section
                 $(".section").css("width", window_w);
-                $(".section").css("height", window_h);
+                $(".section").css("height", window_h + 200);
 
                 // set position of each section
                 $("#origin").css("top", window_h + 200);
@@ -90,7 +90,10 @@
                     $('html,body').animate({ scrollTop: $('#media').offset().top }, 'slow');
                 });
 
-                // make headers center their section
+                // make clicking a section center the section
+                $("#home").click(function(){
+                    $('html,body').animate({ scrollTop: $('#home').offset().top }, 'slow');
+                });
                 $("#origin").click(function(){
                     $('html,body').animate({ scrollTop: $('#origin').offset().top }, 'slow');
                 });
@@ -246,7 +249,7 @@
 
     </head>
     <body>
-        <a href="http://cardboard.kd.io/stairs_m.html" style="z-index:101;position:absolute;left:0;top:0;">mobile site</a> 
+        <a href="http://www.stairsthegame.com/mobile.html" style="z-index:101;position:absolute;left:0;top:0;">mobile site</a> 
     
         <div id="to_top">to top</div>
 
@@ -441,4 +444,4 @@
         </div>
 
     </body>
-</html>
+</html> 
