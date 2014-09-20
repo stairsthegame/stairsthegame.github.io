@@ -22,7 +22,7 @@
                 $("#origin").css("top", window_h + 200);
                 $("#about").css("top", (window_h + 200)*2);
                 $("#tutorial").css("top", (window_h + 200)*3);
-                $("#media").css("top", (window_h + 200)*4);
+                $("#download").css("top", (window_h + 200)*4);
                 
                 set_video_size(window_h, window_w);
                 set_screenshot_size(window_h, window_w);
@@ -86,8 +86,8 @@
                     $('html,body').animate({ scrollTop: $('#tutorial').offset().top }, 'slow');
                 });
 
-                $("#home_media").click(function(){
-                    $('html,body').animate({ scrollTop: $('#media').offset().top }, 'slow');
+                $("#home_download").click(function(){
+                    $('html,body').animate({ scrollTop: $('#download').offset().top }, 'slow');
                 });
 
                 // make clicking a section center the section
@@ -103,8 +103,8 @@
                     $('html,body').animate({ scrollTop: $('#tutorial').offset().top }, 'slow');
                 });
 
-                $("#media").click(function(){
-                    $('html,body').animate({ scrollTop: $('#media').offset().top }, 'slow');
+                $("#download").click(function(){
+                    $('html,body').animate({ scrollTop: $('#download').offset().top }, 'slow');
                 });
 
             });
@@ -199,7 +199,7 @@
                 height: 1.2em;
                 line-height: 1.2em;
             }
-            #home_media {
+            #home_download {
                 font-size: 8em;
                 width: 7em;
                 height: 1.2em;
@@ -260,8 +260,8 @@
             <div class="button" id="home_tutorial">
                 <p>tutorial</p>
             </div>
-            <div class="button" id="home_media">
-                <p>media</p>
+            <div class="button" id="home_download">
+                <p>download</p>
             </div>
         </div>
 
@@ -422,8 +422,8 @@
 
         </div>
 
-        <div class="section" id="media">
-            <div class="header"><h1>media</h1></div>
+        <div class="section" id="download">
+            <div class="header"><h1>download</h1></div>
             <div class="text">
                 <p>
                     <ul>
