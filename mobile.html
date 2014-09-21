@@ -20,14 +20,29 @@
                 $("#origin").css("top", window_h);
                 $("#about").css("top", window_h*2);
                 $("#tutorial").css("top", window_h*3);
-                $("#media").css("top", window_h*4);
+                $("#download").css("top", window_h*4);
             }
             */
+            
+             var set_screenshot_size = function(height, width) {
+                screenshot_height = height * .4;
+                screenshot_width = width * .15;
+                //screenshot_height = video_height.toString();
+                //screenshot_width = video_width.toString();
+                $(".screenshot").width(screenshot_width);
+                $(".screenshot").height(screenshot_height);
+                $(".screenshot img").width(screenshot_width);
+                $(".screenshot img").height(screenshot_height);
+            }
+            
             $(document).ready(function(){
             /*
                 // set position of the sections
                 set_positions();
             */
+                var window_h = $(window).height();
+                var window_w = $(window).width();
+                set_screenshot_size(window_h, window_w)
                 // code from http://www.jqueryrain.com/?4IUuCqNF
                 // hide "to top" button
                 $("#to_top").hide();
@@ -66,8 +81,8 @@
                     $('html,body').animate({ scrollTop: $('#tutorial').offset().top }, 'slow');
                 });
 
-                $("#home_media").click(function(){
-                    $('html,body').animate({ scrollTop: $('#media').offset().top }, 'slow');
+                $("#home_download").click(function(){
+                    $('html,body').animate({ scrollTop: $('#download').offset().top }, 'slow');
                 });
 
                 // make headers center their section
@@ -83,8 +98,8 @@
                     $('html,body').animate({ scrollTop: $('#tutorial').offset().top }, 'slow');
                 });
 
-                $("#media").click(function(){
-                    $('html,body').animate({ scrollTop: $('#media').offset().top }, 'slow');
+                $("#download").click(function(){
+                    $('html,body').animate({ scrollTop: $('#download').offset().top }, 'slow');
                 });
 
             });
@@ -179,11 +194,14 @@
                 height: 1.2em;
                 line-height: 1.2em;
             }
-            #home_media {
+            #home_download {
                 font-size: 8em;
                 width: 7em;
                 height: 1.2em;
                 line-height: 1.2em;
+            }
+            #download { 
+                margin-bottom: 50em;
             }
 
             a {
@@ -226,8 +244,8 @@
 
     </head>
     <body>
-        <a href="http://stairsthegame.com/index.html" style="z-index:101;position:absolute;left:0;top:0;">desktop site</a>
-        
+        <a href="http://www.stairsthegame.com/mobile.html" style="z-index:101;position:absolute;left:0;top:0;">mobile site</a> 
+    
         <div id="to_top">to top</div>
 
         <div class="section" id="home">
@@ -240,8 +258,8 @@
             <div class="button" id="home_tutorial">
                 <p>tutorial</p>
             </div>
-            <div class="button" id="home_media">
-                <p>media</p>
+            <div class="button" id="home_download">
+                <p>download</p>
             </div>
         </div>
 
@@ -356,7 +374,7 @@
                     The original Stairs was basically a prequel to the Classic game mode on easy difficulty. Whereas the motivation in the original Stairs was a motivational speech from a potato when one reached the top, the motivation in the new Stairs is to get higher scores than all your lame friends.
                 </p>
                 <p>
-                    Matt and cardboard made this game. Matt programmed it and cardboard did the art and music. Special thanks to Kickstarter backers for helping us make this happen.
+                    Matt and cardboard made this game. Matt programmed it and cardboard did the art and music.  <a href="https://www.facebook.com/quietcoyote">Clark Pang</a> also helped with the music, making an epic stair climbing anthem. Special thanks to Kickstarter backers for helping us make this happen.
                 </p>
             </div>
 
@@ -382,7 +400,7 @@
                             </ul>
                             
                         <li class="li_yellow">Don't die! The following are the ways to die:</li>
-                            <ul>
+                            <ul class="hints_sub">
                                 <li class="li_white"><em>Trip</em>: This happens when the top of the closest stair leaves the screen while both of your feet are grounded</li>
                                 <li class="li_white"><em>Fall off left</em>: This happens when the top of the closest stair leaves the screen while your left foot is on the ground but off the stair</li>
                                 <li class="li_white"><em>Fall off right</em>: Same as the above, but with the right foot being the one that is off the stair</li>
@@ -396,14 +414,14 @@
             </div>
             <div class="video" style="text-align:center;">
                 <p>
-                    <iframe width="640" height="480" src="//www.youtube.com/embed/Qz6M3-Up1cM" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="640" height="360" src="//www.youtube.com/embed/jiBs_UGQhqo" frameborder="0" allowfullscreen></iframe>
                 </p>
             </div>
 
         </div>
 
-        <div class="section" id="media">
-            <div class="header"><h1>media</h1></div>
+        <div class="section" id="download">
+            <div class="header"><h1>download</h1></div>
             <div class="text">
                 <p>
                     <ul>
@@ -414,9 +432,24 @@
                 </p>
             </div>
             <div class="text">
-                <div style="background-color:gray;width:20em;height:30em;margin-left:3em;margin-top:5em;text-align:center;float:left">a screenshot</div>
-                <div style="background-color:gray;width:20em;height:30em;margin-left:3em;margin-top:5em;text-align:center;float:left">a screenshot</div>
-                <div style="background-color:gray;width:20em;height:30em;margin-left:3em;margin-top:5em;text-align:center;float:left">a screenshot</div>
+                <div class="screenshot" style="background-color:gray;width:20em;height:30em;margin-left:3em;margin-top:5em;text-align:center;float:left">
+                    <img src="http://stairsthegame.com/Screenshots/main_menu.png">
+                </div>
+                <div class="screenshot" style="background-color:gray;width:20em;height:30em;margin-left:3em;margin-top:5em;text-align:center;float:left">
+                    <img src="http://stairsthegame.com/Screenshots/classic.png">
+                </div>
+                <div class="screenshot" style="background-color:gray;width:20em;height:30em;margin-left:3em;margin-top:5em;text-align:center;float:left">
+                    <img src="http://stairsthegame.com/Screenshots/classic_inverted.png">
+                </div>
+                <div class="screenshot" style="background-color:gray;width:20em;height:30em;margin-left:3em;margin-top:5em;text-align:center;float:left">
+                    <img src="http://stairsthegame.com/Screenshots/settings.png">
+                </div>
+                <div class="screenshot" style="background-color:gray;width:20em;height:30em;margin-left:3em;margin-top:5em;text-align:center;float:left">
+                    <img src="http://stairsthegame.com/Screenshots/levels.png">
+                </div>
+                <div class="screenshot" style="background-color:gray;width:20em;height:30em;margin-left:3em;margin-top:5em;text-align:center;float:left">
+                    <img src="http://stairsthegame.com/Screenshots/levels_inverted.png">
+                </div>
             </div>
         </div>
 
