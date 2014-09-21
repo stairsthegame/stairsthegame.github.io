@@ -33,7 +33,7 @@
                 video_width = width * .4;
                 video_height = video_height.toString();
                 video_width = video_width.toString();
-                $("#tutorial_video").html('<iframe width="' + video_width + '" height="' + video_height + '"  src="//www.youtube.com/embed/jiBs_UGQhqo" frameborder="0" allowfullscreen></iframe>');
+                $("#tutorial_video").html('<iframe width="' + video_width + '" height="' + video_height + '" src="//www.youtube.com/embed/IOQU8rTVef4" frameborder="0" allowfullscreen></iframe>');
             }
             
             var set_screenshot_size = function(height, width) {
@@ -43,6 +43,8 @@
                 //screenshot_width = video_width.toString();
                 $(".screenshot").width(screenshot_width);
                 $(".screenshot").height(screenshot_height);
+                $(".screenshot img").width(screenshot_width);
+                $(".screenshot img").height(screenshot_height);
             }
 
             $(document).ready(function(){
@@ -113,8 +115,6 @@
             $(window).resize(function() {
                 set_positions();
             });
-
-
 
         </script>
 
@@ -402,7 +402,7 @@
                             </ul>
                             
                         <li class="li_yellow">Don't die! The following are the ways to die:</li>
-                            <ul>
+                            <ul class="hints_sub">
                                 <li class="li_white"><em>Trip</em>: This happens when the top of the closest stair leaves the screen while both of your feet are grounded</li>
                                 <li class="li_white"><em>Fall off left</em>: This happens when the top of the closest stair leaves the screen while your left foot is on the ground but off the stair</li>
                                 <li class="li_white"><em>Fall off right</em>: Same as the above, but with the right foot being the one that is off the stair</li>
@@ -416,7 +416,6 @@
             </div>
             <div class="video" style="float:left;margin-right:0;padding-left:3em;">
                 <p id="tutorial_video">
-                    <iframe width="640" height="360" src="//www.youtube.com/embed/jiBs_UGQhqo" frameborder="0" allowfullscreen></iframe>
                 </p>
             </div>
 
@@ -434,9 +433,24 @@
                 </p>
             </div>
             <div class="text">
-                <div class="screenshot" style="background-color:gray;width:20em;height:30em;margin-left:3em;margin-top:5em;text-align:center;float:left">a screenshot</div>
-                <div class="screenshot" style="background-color:gray;width:20em;height:30em;margin-left:3em;margin-top:5em;text-align:center;float:left">a screenshot</div>
-                <div class="screenshot" style="background-color:gray;width:20em;height:30em;margin-left:3em;margin-top:5em;text-align:center;float:left">a screenshot</div>
+                <div class="screenshot" style="background-color:gray;width:20em;height:30em;margin-left:3em;margin-top:5em;text-align:center;float:left">
+                    <img src="http://stairsthegame.com/Screenshots/main_menu.png">
+                </div>
+                <div class="screenshot" style="background-color:gray;width:20em;height:30em;margin-left:3em;margin-top:5em;text-align:center;float:left">
+                    <img src="http://stairsthegame.com/Screenshots/classic.png">
+                </div>
+                <div class="screenshot" style="background-color:gray;width:20em;height:30em;margin-left:3em;margin-top:5em;text-align:center;float:left">
+                    <img src="http://stairsthegame.com/Screenshots/classic_inverted.png">
+                </div>
+                <div class="screenshot" style="background-color:gray;width:20em;height:30em;margin-left:3em;margin-top:5em;text-align:center;float:left">
+                    <img src="http://stairsthegame.com/Screenshots/settings.png">
+                </div>
+                <div class="screenshot" style="background-color:gray;width:20em;height:30em;margin-left:3em;margin-top:5em;text-align:center;float:left">
+                    <img src="http://stairsthegame.com/Screenshots/levels.png">
+                </div>
+                <div class="screenshot" style="background-color:gray;width:20em;height:30em;margin-left:3em;margin-top:5em;text-align:center;float:left">
+                    <img src="http://stairsthegame.com/Screenshots/levels_inverted.png">
+                </div>
             </div>
         </div>
 
